@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/react/src/assets/ZappyCart.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZappyCart - Shop Smart, Deliver Fast.</title>
+    <style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .scroll-animation {
+    animation: scroll 30s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+</style>
+<!-- <script src="https://cdn.tailwindcss.com?plugins=line-clamp"></script>
+<script>
+  tailwind.config = {
+    plugins: [tailwindcssLineClamp],
+  };
+</script> -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
