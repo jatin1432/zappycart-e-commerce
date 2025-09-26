@@ -17,7 +17,7 @@ const AdminDashboard = () => {
   
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/orders/admin", {
+        const res = await axios.get("https://zappycart-e-commerce.onrender.com/api/orders/admin", {
           headers: { Authorization: `Bearer ${token}` },
         });
         // Unwrap if response has wrapper
@@ -67,7 +67,7 @@ const AdminDashboard = () => {
   const markAsDelivered = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:4000/api/orders/${id}/status`,
+        `https://zappycart-e-commerce.onrender.com/api/orders/${id}/status`,
         { status: "Delivered" },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
   const handleMarkDelivered = async (orderId) => {
   try {
     await axios.patch(
-      `http://localhost:4000/api/orders/${orderId}/deliver`,
+      `https://zappycart-e-commerce.onrender.com/api/orders/${orderId}/deliver`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );
