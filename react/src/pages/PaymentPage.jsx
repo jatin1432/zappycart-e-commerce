@@ -23,7 +23,7 @@ const PaymentPage = () => {
     const createOrder = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:4000/api/orders/create",
+          "https://zappycart-e-commerce.onrender.com/api/orders/create",
           { amount: totalPrice },
           { headers: { Authorization: `Bearer ${token}` } }
         );
