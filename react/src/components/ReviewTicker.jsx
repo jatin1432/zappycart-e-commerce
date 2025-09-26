@@ -10,7 +10,7 @@ const ReviewTicker = () => {
   // Fetch website reviews on load
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/reviews/website");
+      const res = await axios.get("https://zappycart-e-commerce.onrender.com/api/reviews/website");
       setReviews(res.data);
     } catch (err) {
       console.error("Error fetching reviews:", err);
@@ -27,7 +27,7 @@ const ReviewTicker = () => {
     setLoading(true);
     setError("");
     try {
-      await axios.post("http://localhost:4000/api/reviews/add", {
+      await axios.post("https://zappycart-e-commerce.onrender.com/api/reviews/add", {
         name: form.name,
         text: form.text,
         product: null, // explicitly for website
