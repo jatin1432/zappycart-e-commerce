@@ -23,7 +23,7 @@ router.get("/google/callback",
       expiresIn: "7d",
     });
 
-    res.redirect(`http://localhost:5173/auth-success?token=${token}`);
+    res.redirect(`https://zappycart-e-commerce-static.onrender.com/auth-success?token=${token}`);
   }
 );
 router.get("/google/callback-test", (req, res) => {
