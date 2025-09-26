@@ -28,8 +28,8 @@ const ProductSection = () => {
       setLoading(true);
       try {
         const endpoint = category
-          ? `http://localhost:4000/api/products/category/${category}`
-          : `http://localhost:4000/api/products`;
+          ? `https://zappycart-e-commerce.onrender.com/api/products/category/${category}`
+          : `https://zappycart-e-commerce.onrender.com/api/products`;
 
         const res = await axios.get(endpoint);
 
