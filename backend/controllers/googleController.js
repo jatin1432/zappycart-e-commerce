@@ -13,7 +13,7 @@ const googleCallback = async (req, res) => {
     });
   }
   const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: "7d" });
-  res.redirect(`http://localhost:3000/auth-success?token=${token}`);
+  res.redirect(`https://zappycart-e-commerce-static.onrender.com/auth-success?token=${token}`);
   passport.authenticate("google", {
   successRedirect: "/auth-success",
   failureRedirect: "/login-failed",
