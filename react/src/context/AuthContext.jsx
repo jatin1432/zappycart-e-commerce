@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
 
   const sendOtp = async (contact, type) => {
     try {
-      const { data } = await axios.post("http://localhost:4000/api/otp/send", {
+      const { data } = await axios.post("https://zappycart-e-commerce.onrender.com/api/otp/send", {
         contact,
         type,
       });
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
 
   const verifyOtp = async ({ contact, otp, name, type }) => {
     try {
-      const { data } = await axios.post("http://localhost:4000/api/otp/verify", {
+      const { data } = await axios.post("https://zappycart-e-commerce.onrender.com/api/otp/verify", {
         contact,
         otp,
         name,
