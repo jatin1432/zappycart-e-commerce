@@ -24,7 +24,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/products/${id}`);
+        const res = await axios.get(`https://zappycart-e-commerce.onrender.com/api/products/${id}`);
         const fetchedProduct = res.data;
         setProduct(fetchedProduct);
         setSelectedVariant({
@@ -32,7 +32,7 @@ const ProductDetailPage = () => {
           size: fetchedProduct.variants?.size?.[0] || ""
         });
 
-        const all = await axios.get(`http://localhost:4000/api/products`);
+        const all = await axios.get(`https://zappycart-e-commerce.onrender.com/api/products`);
         const filtered = all.data.filter(p => p.category === fetchedProduct.category && p._id !== id);
         setSimilarProducts(filtered.slice(0, 4));
       } catch (err) {
@@ -44,7 +44,7 @@ const ProductDetailPage = () => {
 
     const fetchReviews = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/reviews/${id}`);
+        const res = await axios.get(`https://zappycart-e-commerce.onrender.com/api/reviews/${id}`);
         setReviews(res.data);
       } catch (err) {
         console.error("Failed to fetch reviews", err);
@@ -68,7 +68,7 @@ const ProductDetailPage = () => {
   }
 
   try {
-    await axios.post(`http://localhost:4000/api/reviews/add`, {
+    await axios.post(`https://zappycart-e-commerce.onrender.com/api/reviews/add`, {
       product: id,
       rating: reviewInput.rating,
       text: reviewInput.comment,
@@ -78,7 +78,7 @@ const ProductDetailPage = () => {
     toast.success("Review submitted!");
     setReviewInput({ rating: 5, comment: "" });
 
-    const res = await axios.get(`http://localhost:4000/api/reviews/${id}`,{
+    const res = await axios.get(`https://zappycart-e-commerce.onrender.com/api/reviews/${id}`,{
         rating: reviewInput.rating,
       text: reviewInput.text,
       name: user?.name || "Anonymous",
