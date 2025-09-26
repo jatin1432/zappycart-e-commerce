@@ -77,7 +77,7 @@ const CartPage = () => {
         navigate("/order-success");
       } else {
         const { data } = await axios.post(
-          "https://zappycart-e-commerce.onrender.com/orders/create",
+          "https://zappycart-e-commerce.onrender.com/api/orders/create",
           orderData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
