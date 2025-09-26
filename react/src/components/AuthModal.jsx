@@ -57,7 +57,7 @@ const AuthModal = ({ onClose }) => {
   };
 
   const handleGoogleLogin = () => {
-    window.open("http://localhost:4000/api/auth/google", "_self");
+    window.open("https://zappycart-e-commerce.onrender.com/api/auth/google", "_self");
   };
 
   return (
