@@ -19,7 +19,7 @@ const CategoriesSection = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/products/category");
+        const res = await axios.get("https://zappycart-e-commerce.onrender.com/api/products/category");
         setCategories(res.data || fallbackCategories);
       } catch (error) {
         console.error("Failed to fetch categories, using fallback:", error);
