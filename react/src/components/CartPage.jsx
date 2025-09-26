@@ -69,7 +69,7 @@ const CartPage = () => {
     try {
       if (paymentMethod === "COD") {
         const res = await axios.post(
-          "http://localhost:4000/api/orders/place",
+          "https://zappycart-e-commerce.onrender.com/api/orders/place",
           orderData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -77,7 +77,7 @@ const CartPage = () => {
         navigate("/order-success");
       } else {
         const { data } = await axios.post(
-          "http://localhost:4000/api/orders/create",
+          "https://zappycart-e-commerce.onrender.com/orders/create",
           orderData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -92,7 +92,7 @@ const CartPage = () => {
           description: "Order Payment",
           handler: async (resp) => {
             await axios.post(
-              "http://localhost:4000/api/orders/verify",
+              "https://zappycart-e-commerce.onrender.com/api/orders/verify",
               {
                 razorpay_order_id: resp.razorpay_order_id,
                 razorpay_payment_id: resp.razorpay_payment_id,
@@ -101,7 +101,7 @@ const CartPage = () => {
               { headers: { Authorization: `Bearer ${token}` } }
             );
             await axios.post(
-              "http://localhost:4000/api/orders/place",
+              "https://zappycart-e-commerce.onrender.com/api/orders/place",
               orderData,
               { headers: { Authorization: `Bearer ${token}` } }
             );
